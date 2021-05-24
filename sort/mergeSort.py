@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Merge Sort 최선: O(NlogN) 최악: O(NlogN)
 
 def mergeSort(unOrderedLeft, unOrderedRight=False):

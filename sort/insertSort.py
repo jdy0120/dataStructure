@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # insert sort 최선:O(N) 최악: O(N^2)
 
 def insertSort(unOrdered):

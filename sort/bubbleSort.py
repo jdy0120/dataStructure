@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Bubble Sort 최선: O(N^2) 최악: O(N^2)
 
 def bubbleSort(unOrdered):

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Quick Sort 최선: O(NlogN) 최악: O(N^2)
 
 def quickSort(unordered):
