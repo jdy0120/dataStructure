@@ -1,4 +1,4 @@
-# Merge Sort
+# Merge Sort 최선: O(NlogN) 최악: O(NlogN)
 
 def mergeSort(unOrderedLeft, unOrderedRight=False):
     if len(unOrderedLeft) == 0:
