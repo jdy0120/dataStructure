@@ -10,7 +10,7 @@ from mergeSort import mergeSort
 from quickSort import quickSort
 
 
-def getTime(division, dataList):
+def getTimeAndList(division, dataList):
     start = timer()
     if (division == 'selectionSort'):
         print('selectionSort >>> {0}'.format(selectionSort(dataList)))
@@ -37,9 +37,9 @@ random.shuffle(dataList)
 print('섞인 배열은 {0} 입니다.'.format(dataList))
 
 
-getTime('selectionSort', dataList)
-getTime('insertSort', dataList)
-getTime('bubbleSort', dataList)
-getTime('mergeSort', dataList)
-getTime('quickSort', dataList)
-getTime('내부 sort', dataList)
+getTimeAndList('selectionSort', dataList)
+getTimeAndList('insertSort', dataList)
+getTimeAndList('bubbleSort', dataList)
+getTimeAndList('mergeSort', dataList)
+getTimeAndList('quickSort', dataList)
+getTimeAndList('내부 sort', dataList)
