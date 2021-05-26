@@ -1,34 +1,29 @@
 # -*- coding: utf-8 -*-
 # Merge Sort 최선: O(NlogN) 최악: O(NlogN)
 
-def mergeSort(unOrderedLeft, unOrderedRight=False):
-    if len(unOrderedLeft) == 0:
-        return unOrderedRight
-    if unOrderedRight and len(unOrderedRight) == 0:
-        return unOrderedLeft
+def mergeSort(unOrdered):
+    if len(unOrdered) == 1 or len(unOrdered) == 0:
+        return unOrdered
 
-    leftArray = mergeSort(unOrderedLeft[:len(
-        unOrderedLeft)//2], unOrderedLeft[len(unOrderedLeft)//2:])
+    leftArray = unOrdered[:len(unOrdered)//2]
+    rightArray = unOrdered[len(unOrdered)//2:]
 
-    if (unOrderedRight == False):
-        rightArray = []
-    else:
-        rightArray = mergeSort(unOrderedRight[:len(
-            unOrderedRight)//2], unOrderedRight[len(unOrderedRight)//2:])
+    leftMerge = mergeSort(leftArray)
+    rightMerge = mergeSort(rightArray)
 
     ordered = []
-    while (leftArray or rightArray):
-        if not leftArray:
-            ordered.extend(rightArray)
+    while (leftMerge or rightMerge):
+        if not leftMerge:
+            ordered.extend(rightMerge)
             break
-        if not rightArray:
-            ordered.extend(leftArray)
+        if not rightMerge:
+            ordered.extend(leftMerge)
             break
 
-        if (leftArray[0] < rightArray[0]):
-            ordered.append(leftArray[0])
-            leftArray = leftArray[1:]
+        if (leftMerge[0] < rightMerge[0]):
+            ordered.append(leftMerge[0])
+            leftMerge = leftMerge[1:]
         else:
-            ordered.append(rightArray[0])
-            rightArray = rightArray[1:]
+            ordered.append(rightMerge[0])
+            rightMerge = rightMerge[1:]
     return ordered
