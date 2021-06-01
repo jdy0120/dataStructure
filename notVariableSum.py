@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 # 변수생성 없이 0에서 10까지 더하기
+
 def sum(start, end):
     if end == start:
         return 0
