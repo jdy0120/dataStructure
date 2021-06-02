@@ -10,7 +10,7 @@ def selectionSort(unOrdered):
             if minimum == -1 or minimum > ordered[y]:
                 minimum = ordered[y]
                 where = y
-            if minimum < ordered[x]:
-                ordered[x], ordered[where] = ordered[where], ordered[x]
+        if minimum < ordered[x]:
+            ordered[x], ordered[where] = ordered[where], ordered[x]
 
     return ordered
