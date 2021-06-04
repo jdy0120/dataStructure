@@ -3,11 +3,11 @@
 
 def insertSort(unordered):
     ordered = unordered[:]
-    for x in range(1, len(ordered)):
-        y = x - 1
+    for x in range(len(ordered)):
         key = ordered[x]
-        while ordered[y] > key and y >= 0:
+        y = x-1
+        while y >= 0 and ordered[y] > key:
             ordered[y+1] = ordered[y]
-            y = y - 1
+            y -= 1
         ordered[y+1] = key
     return ordered

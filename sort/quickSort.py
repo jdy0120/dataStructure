@@ -2,18 +2,20 @@
 # Quick Sort 최선: O(NlogN) 최악: O(N^2)
 
 def quickSort(unordered):
-    if not unordered:
-        return []
+    if len(unordered) == 0:
+        return unordered
+
     pivot = unordered[0]
-    smaller = []
-    bigger = []
+    small = []
+    big = []
 
-    for x in range(1, len(unordered)):
-        if unordered[x] < pivot:
-            smaller.append(unordered[x])
+    for x in unordered[1:]:
+        if pivot > x:
+            small.append(x)
         else:
-            bigger.append(unordered[x])
+            big.append(x)
 
-    left = quickSort(smaller)
-    right = quickSort(bigger)
-    return left+[pivot]+right
+    left = quickSort(small)
+    right = quickSort(big)
+
+    return left + [pivot] + right
