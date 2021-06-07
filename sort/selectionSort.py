@@ -6,9 +6,9 @@ def selectionSort(unordered):
     for x in range(len(ordered)-1):
         minimum = where = -1
         for y in range(x+1, len(ordered)):
-            if minimum == -1 or ordered[y] < minimum:
+            if minimum == -1 or minimum > ordered[y]:
                 minimum = ordered[y]
                 where = y
-        if minimum < ordered[x]:
-            ordered[x], ordered[where] = ordered[where], ordered[x]
+        if where != -1 and ordered[x] > ordered[where]:
+            ordered[where], ordered[x] = ordered[x], ordered[where]
     return ordered

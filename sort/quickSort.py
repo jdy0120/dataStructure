@@ -10,7 +10,7 @@ def quickSort(unordered):
     big = []
 
     for x in unordered[1:]:
-        if pivot > x:
+        if x < pivot:
             small.append(x)
         else:
             big.append(x)
