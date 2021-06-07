@@ -2,14 +2,13 @@
 # Merge Sort 최선: O(NlogN) 최악: O(NlogN)
 
 def mergeSort(unordered):
-    if len(unordered) == 0 or len(unordered) == 1:
+    if len(unordered) == 1 or len(unordered) == 0:
         return unordered
+    leftArray = unordered[:len(unordered)//2]
+    rightArray = unordered[len(unordered)//2:]
 
-    leftList = unordered[:len(unordered)//2]
-    rightList = unordered[len(unordered)//2:]
-
-    leftMerge = mergeSort(leftList)
-    rightMerge = mergeSort(rightList)
+    leftMerge = mergeSort(leftArray)
+    rightMerge = mergeSort(rightArray)
 
     ordered = []
     while leftMerge or rightMerge:
@@ -20,10 +19,10 @@ def mergeSort(unordered):
             ordered.extend(leftMerge)
             break
 
-        if leftMerge[0] < rightMerge[0]:
-            ordered.append(leftMerge[0])
-            leftMerge = leftMerge[1:]
-        else:
+        if leftMerge[0] > rightMerge[0]:
             ordered.append(rightMerge[0])
             rightMerge = rightMerge[1:]
+        else:
+            ordered.append(leftMerge[0])
+            leftMerge = leftMerge[1:]
     return ordered
